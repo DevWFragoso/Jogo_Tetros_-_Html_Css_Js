@@ -282,7 +282,10 @@ function rotacionaBloco(){
 function moveBlocoTetros(direcao){
     let linha = atualBlocoTetros.linha;
     let coluna = atualBlocoTetros.coluna;
-
+    
+    if (gameOver) {
+        return;
+    }
     if(direcao === "esquerda" ){
         if(podeMoverBloco(0,-1)){
             apagaBlocoTetros();
