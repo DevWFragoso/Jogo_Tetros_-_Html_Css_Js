@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon"/>
     <link rel="stylesheet" href="./style.css">
     <title>Jogo Tetros</title>
 </head>
 <body>
     <div class="tabuleiroJOGO">
         <img src="./assets/logo.png" alt="" class="logo">
+       <h1 class="button-container">
+            <div class="button-group">
+                <button id="btnLeft" type="button" class="button">
+                    <span class="button__icon">
+                        <ion-icon name="caret-back-outline"></ion-icon>
+                    </span>
+                </button>
+                <button id="btnRotate" type="button" class="button">
+                    <span class="button__icon">    
+                        <ion-icon name="sync-outline"></ion-icon>                 
+                    </span>
+                </button>
+            </div>    
             <div id="tabuleiro"></div>
+            <div class="button-group2">
+                <button id="btnRight" type="button" class="button">
+                    <span class="button__icon">
+                        <ion-icon name="caret-forward-outline"></ion-icon>
+                    </span>                
+                </button>
+                <button id="btnDrop" type="button" class="button">
+                    <span class="button__icon">    
+                        <ion-icon name="arrow-down-outline"></ion-icon>
+                    </span>
+                </button>
+            </div> 
+        </h1>
         <p>
             <div id="pontos"> Pontos: </div>
         </p>
@@ -24,6 +51,9 @@
                 </select>
         </p>
     </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./index.js"></script>
   
 </body>
