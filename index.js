@@ -8,7 +8,7 @@ porque ela falhando e "com certeza está", por favor,
 alimente este contador como um aviso para a próxima pessoa
 que venha a analizar este código.
 
-total_horas_perdidas_aqui: 7
+total_horas_perdidas_aqui: 10
 
 */
 const LARGURA_QUADRO = 10;
@@ -28,8 +28,7 @@ document.getElementById("pontos").textContent = "Pontos: " + pontos;
 
 
 
-
-//Matris do Tabuleiro
+//Matriz do Tabuleiro
 for(let linha = 0; linha < ALTURA_QUADRO; linha++){
     quadro[linha] = [];
     for(let coluna = 0; coluna < LARGURA_QUADRO; coluna++){
@@ -38,8 +37,10 @@ for(let linha = 0; linha < ALTURA_QUADRO; linha++){
 }
 //Constante das Peças do Jogo
 const blocosTetros = [
+    //OBJETOS
     {
         forma: [
+          //MATRIZ DO BOLCO
             [1,1],
             [1,1]
         ],
@@ -135,7 +136,7 @@ function verificaGameOver(){
     //Verifica de a primeira linha do quadro tem algum bloco preenchido
     for(let c = 0; c < LARGURA_QUADRO; c++){
         if(quadro[0][c] !== 0){
-            alert("Game Over! Sua pontuação final foi: "+pontos+" Pontos");
+            alert("Game Over! Sua pontuação final foi: "+pontos+" Pontos - F5 p/ Reiniciar");
             gameOver = true;
             return true; //Game-Over
         }
@@ -352,8 +353,17 @@ function dropaBloco(){
     travaBlocoTetros();
 }
 
-//Evento de Escuta do Teclado
+//Evento de Escuta do Teclado e Click
+const btnLeft = document.getElementById("btnLeft");
+const btnRight = document.getElementById("btnRight");
+const btnRotate = document.getElementById("btnRotate");
+const btnDrop = document.getElementById("btnDrop");
+
 document.addEventListener('keydown', handleKeyPress);
+btnLeft.addEventListener("click", handleBtnLeftClick);
+btnRight.addEventListener("click", handleBtnRightClick);
+btnRotate.addEventListener("click", handleBtnRotateClick);
+btnDrop.addEventListener("click", handleBtnDropClick);
 
 //Função de Comandos do Teclado
 function handleKeyPress(event){
@@ -374,4 +384,21 @@ function handleKeyPress(event){
            dropaBloco();
         break;
     }
+}
+
+//Funções de manipulador de evento para os botões
+function handleBtnLeftClick() {
+    moveBlocoTetros('esquerda');
+}
+
+function handleBtnRightClick() {
+    moveBlocoTetros('direita');
+}
+
+function handleBtnRotateClick() {
+    rotacionaBloco();
+}
+
+function handleBtnDropClick() {
+    dropaBloco();
 }
