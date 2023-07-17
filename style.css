@@ -1,18 +1,44 @@
 body{
     background: linear-gradient(0deg, #ff914d 0%, #ff3131 100%);
-    height: 100vh;
+    height:max-content;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
+    zoom: 0.88;
 }
-
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .logo{
     display: block;
     margin: 0 auto 20px;
 }
-
+.button{
+    font-size: 80px;
+    padding: 10px 20px;
+    width: 100px;
+    height: 200px;
+    background-color:transparent;
+    border-color:transparent;
+}
+.buttonDrop{
+    font-size: 80px;
+    padding: 10px 20px;
+    width: 100px;
+    height: 145px;
+    background-color:transparent;
+    border-color:transparent;
+}
+.button-group, .button-group2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-right: 20px;
+  }
 #tabuleiro {
     width: 240px;
     height: 480px;
